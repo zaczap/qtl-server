@@ -13,6 +13,7 @@ env.user = secrets['user']
 env.hosts = secrets['hosts']
 
 def deploy():
+	local("git push")
 
 	now = str(datetime.now())
 	print "Deploying @ {0}".format(now)
@@ -31,5 +32,3 @@ def restart():
 	sudo("supervisorctl reread && supervisorctl update")
 	sudo("/etc/init.d/nginx restart && supervisorctl restart {0}".format(config['application']))
 
-def push_local_repo():
-	pass
