@@ -1,4 +1,5 @@
 {
 	"application": "sardinia_qtl_browser",
 	"repository": "https://github.com/zaczap/qtl-server.git",
+	"project_dir": "/mnt/data/sardinia/"
 }

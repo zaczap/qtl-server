@@ -9,8 +9,8 @@ secrets = json.load(open("secrets.json"))
 config = json.load(open("config.json"))
 
 env.use_ssh_config = True
-env.user = secret['user']
-env.hosts = secret['hosts']
+env.user = secrets['user']
+env.hosts = secrets['hosts']
 
 def deploy():
 
@@ -19,10 +19,10 @@ def deploy():
 	now = str(datetime.now())
 	print "Deploying @ {0}".format(now)
 	### Does git repo exist?
-	gitRepoExists = files.exists(config['remote_dir'])
+	gitRepoExists = files.exists(config['project_dir'])
 	if not gitRepoExists:
-		run("git clone {0} {1}".format(config['repository'], config['remote_dir']))
-	with cd(config['remote_dir']):
+		run("git clone {0} {1}".format(config['repository'], config['project_dir']))
+	with cd(config['project_dir']):
 		run("git pull origin master")
 
 	restart()
