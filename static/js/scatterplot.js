@@ -132,5 +132,5 @@ ScatterPlot.prototype.redraw = function() {
 	  	self.redraw();
 	}
 
-	self.svg.call(d3.behavior.zoom().x(self.x).scaleExtent([0,2]).on("zoomend", zoomFunction));
+	self.svg.call(d3.behavior.zoom().x(self.x).scaleExtent([0,2]).on("zoom", zoomFunction));
 };
