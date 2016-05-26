@@ -101,7 +101,7 @@ fetch_genotypes = function(site) {
 		mapX = function(d) { return d.genotype }
 		mapY = function(d) { return d.expression }
 
-		eqtl_plot = new QTLPlot("#eqtl_plot_container", pdata, {width: 300, height:280, yLabel:'Expression (Z)', xLabel:'Genotype @ ' + site, extractX:mapX, extractY:mapY})
+		eqtl_plot = new QTLPlot("#eqtl_plot_container", pdata, {title: "Gene Expression @ " + site, width: 300, height:280, yLabel:'Expression (Z)', xLabel:'Genotype @ ' + site, extractX:mapX, extractY:mapY})
 
 		var pdata = Object.keys(ase_data).map(function(x) {	
 			return Object.keys(ase_data[x]).map(function(y) { 
@@ -113,7 +113,7 @@ fetch_genotypes = function(site) {
 		mapX = function(d) { return d.genotype }
 		mapY = function(d) { return d.ase }
 
-		ase_plot = new QTLPlot("#ase_plot_container", pdata, {width: 300, height:280, yLabel:'Allelic Imbalance', xLabel:'Genotype @ ' + site, extractX:mapX, extractY:mapY, forceRange:[0,.5]})
+		ase_plot = new QTLPlot("#ase_plot_container", pdata, {title: "ASE @ " + site, width: 300, height:280, yLabel:'Allelic Imbalance', xLabel:'Genotype @ ' + site, extractX:mapX, extractY:mapY, forceRange:[0,.5]})
 
 
 	});
