@@ -82,7 +82,7 @@ QTLPlot.prototype.redraw = function() {
 	      .enter().append("circle")
 	      .attr("class", "dot")
 	      .attr("r", function(x) { return self.extractRadius(x) })
-	      .attr("cx", function(x) { return self.x(ordinal_mapping[self.extractX(x)]) })
+	      .attr("cx", function(x) { return self.x(ordinal_mapping[self.extractX(x)])+ Math.random()*6; })
 	      .attr("cy", function(x) { return self.y(self.extractY(x)) })
 	      .attr('fill', function(x) { return self.extractColor(x)})
 	      .style('opacity', .6)
