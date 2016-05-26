@@ -14,8 +14,6 @@ env.hosts = secrets['hosts']
 
 def deploy():
 
-	#push_local_repo()
-
 	now = str(datetime.now())
 	print "Deploying @ {0}".format(now)
 	### Does git repo exist?
@@ -28,6 +26,9 @@ def deploy():
 	restart()
 
 def restart():
+	sudo("cp -f {0}/{1} /etc/nginx/sites-available/{1} && ln -fs /etc/nginx/sites-available/{1} /etc/nginx/sites-enabled/{1}".format(config['project_dir'], config['nginx_conf']))
+	sudo("cp -f {0}/{1} /etc/supervisor/conf.d/{1} ".format(config['project_dir'], config['supervisor_conf']))
+	sudo("supervisorctl reread && supervisorctl update")
 	sudo("/etc/init.d/nginx restart && supervisorctl restart {0}".format(config['application']))
 
 def push_local_repo():
