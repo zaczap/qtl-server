@@ -1,0 +1,28 @@
+<!-- Fixed navbar -->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Sardinia QTLs</a>
+    </div>
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="/">Browser</a></li>
+        <li><a href="/about">About</a></li>
+      </ul>
+	  <!-- Search area -->
+      <form id='searchForm' class="navbar-form navbar-right" role="search" action="" method="GET">
+         <div class="form-group">
+           <label for="searchField">Search:</label>
+           <input type="text" size=40 class="form-control" id="searchField" placeholder="Gene symbol, rsID, etc.">
+        </div>
+        <input class="btn btn-default" type='submit' value='Search' />
+    </form>
+    </div><!--/.nav-collapse -->
+  </div>
+</nav>

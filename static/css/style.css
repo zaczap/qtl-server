@@ -1,0 +1,26 @@
+#plot_container {
+	display: none;
+}
+
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: black;
+    shape-rendering: crispEdges;
+}
+.axis text {
+    font-family: sans-serif;
+    font-size: 11px;
+}
+text {
+	font-family: sans-serif;
+}
+
+body {
+    background: url('/static/watercolor_pxJeqi74AZI.jpeg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}

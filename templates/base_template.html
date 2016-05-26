@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+{% include 'header.html' %}
+<body>
+{% include 'navigation.html' %}
+ <div class="container">
+ <div id="spinner"></div>
+ <div id="content" class="row">
+{% block content %}
+{% endblock %}
+</div>
+{% include "plot_template.html" %}
+</div>
+{% include 'footer.html' %}
+</body>
+</html>
