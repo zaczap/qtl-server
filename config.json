@@ -2,6 +2,6 @@
 	"application": "sardinia_qtl_browser",
 	"repository": "https://github.com/zaczap/qtl-server.git",
 	"project_dir": "/mnt/data/sardinia/",
-	"nginx_conf": "config/sardinia_nginx.conf",
-	"supervisor_conf": "config/sardinia_supervisor.conf"
+	"nginx_conf": "sardinia_nginx.conf",
+	"supervisor_conf": "sardinia_supervisor.conf"
 }
