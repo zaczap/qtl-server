@@ -122,7 +122,6 @@ ScatterPlot.prototype.redraw = function() {
 	}
 
 	zoomFunction = function() {
-
 		// Publish to listener plots
 		self.listeners.map(function(splotTarget) {
 			splotTarget.x.domain(self.x.domain())// = jQuery.extend({}, self.x)
