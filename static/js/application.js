@@ -24,6 +24,11 @@ $(document).ready(function(x) {
 	});
 });
 
+searchExample = function(query) {
+	$("#searchField").val(query);
+	search();
+}
+
 search = function() {
 	destroy_plots();
 	d3.select('body').transition().style('background','white');
