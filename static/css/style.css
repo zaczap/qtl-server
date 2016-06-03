@@ -24,3 +24,7 @@ body {
     background-size: cover;
     -o-background-size: cover;
 }
+
+#example_panel {
+    width: 30%;
+}
