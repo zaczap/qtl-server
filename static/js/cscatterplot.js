@@ -10,9 +10,10 @@ CanvasScatterPlot = function(parent_id, dataset, options) {
 	this.height = options.height || 340;
 	this.wpadding = options.wpadding || 100;
 	this.hpadding = options.hpadding || 30;
-	self.ylabel = options.ylabel || "";
-	self.xlabel = options.xlabel || "";
-	self.title = options.title || "";
+	this.ylabel = options.ylabel || "";
+	this.xlabel = options.xlabel || "";
+	this.title = options.title || "";
+	this.onclick = options.onclick || function(d) {}
 
 	this.click = {x:0,y:0}
 	this.hover = {x:0,y:0}
@@ -272,6 +273,7 @@ CanvasScatterPlot = function(parent_id, dataset, options) {
 
 		if (closest_point && euclideanDistance(self.click, closest_point) < 9) {
 			self.clicked = closest_point.inverted
+			self.onclick(self.clicked)
 			self.render()
 			self.publish("click")
 		} 

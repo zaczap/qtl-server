@@ -84,8 +84,8 @@ fetch = function(query) {
 
 		chromosome = eqtl_data[0][2];
 
-		eqtls_plot = new CanvasScatterPlot("#eqtls_plot_container", eqtl_data, {title:'Expression QTLs for ' + query,width:800,height: 280, x:qmapX, y:qmapY, xlabel:"chromosome " + chromosome, ylabel:"-log10 [p-value]"})
-		isoqtls_plot = new CanvasScatterPlot("#isoqtls_plot_container", isoqtl_data, {title:'Isoform QTLs for ' + query,width:800,height: 280, x:qmapX, y:qmapY, xlabel:"chromosome " + chromosome, ylabel:"-log10 [p-value]"})
+		eqtls_plot = new CanvasScatterPlot("#eqtls_plot_container", eqtl_data, {title:'Expression QTLs for ' + query,width:800,height: 280, x:qmapX, y:qmapY, xlabel:"chromosome " + chromosome, ylabel:"-log10 [p-value]",onclick=onclickFunction})
+		isoqtls_plot = new CanvasScatterPlot("#isoqtls_plot_container", isoqtl_data, {title:'Isoform QTLs for ' + query,width:800,height: 280, x:qmapX, y:qmapY, xlabel:"chromosome " + chromosome, ylabel:"-log10 [p-value]",onclick=onclickFunction})
 		eqtls_plot.register(isoqtls_plot);
 		isoqtls_plot.register(eqtls_plot);
 	});
