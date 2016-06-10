@@ -189,9 +189,9 @@ CanvasScatterPlot = function(parent_id, dataset, options) {
 	}
 
 	/** Publish function **/
-	this.publish = function() {
+	this.publish = function(action) {
 		self.listeners.forEach(function(target, index, array) {
-			target.clicked = {x:0,y:0}
+			if(action == "click") target.clicked = {x:0,y:0}
 			target.hovered = {x:0,y:0}
 			target.xAxis.domain([self.xAxis.domain()[0], self.xAxis.domain()[1]])
 			target.render()
@@ -229,7 +229,7 @@ CanvasScatterPlot = function(parent_id, dataset, options) {
 	    	   	
 	    self.xAxis.domain([newAxisMin, newAxisMax]);
 	    self.render();
-	    self.publish()
+	    self.publish("zoom")
 	});
 
 	/** Define drag interaction **/
@@ -249,7 +249,7 @@ CanvasScatterPlot = function(parent_id, dataset, options) {
 		}
 		self.xAxis.domain([newAxisMin,newAxisMax]);
 		self.render();
-		self.publish()
+		self.publish("drag")
 	});
 	this.dragging = false
 	this.drag.on("dragstart", function(x) { self.dragging=true})
@@ -273,7 +273,7 @@ CanvasScatterPlot = function(parent_id, dataset, options) {
 		if (closest_point && euclideanDistance(self.click, closest_point) < 9) {
 			self.clicked = closest_point.inverted
 			self.render()
-			self.publish()
+			self.publish("click")
 		} 
 	})
 
@@ -293,9 +293,11 @@ CanvasScatterPlot = function(parent_id, dataset, options) {
 			if(hover_distance < 9) {
 				self.hovered = closest_point.inverted
 				self.render()
+				self.publish("hover")
 			} else if(self.hovered.x > 0) {
 				self.hovered = {x:0, y:0}
 				self.render()
+				self.publish("hover")
 			}
 		}
 	})
