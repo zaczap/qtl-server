@@ -25,7 +25,7 @@ CanvasScatterPlot = function(parent_id, dataset, options) {
  
 	/** Create internal data representation **/
 	this.points = [];
-	data.forEach(function(value, index, array) {
+	dataset.forEach(function(value, index, array) {
 		value['x'] = self.x(value)
 		value['y'] = self.y(value)
 		self.points.push(value)
