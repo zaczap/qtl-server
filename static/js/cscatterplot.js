@@ -163,7 +163,7 @@ CanvasScatterPlot = function(parent_id, dataset, options) {
 		self.bufferSurface.fillStyle = "#ff0000";
 		if(self.clicked.x > 0 && self.clicked.y > 0 && self.clicked.x >= self.xAxis.domain()[0] && self.clicked.x <= self.xAxis.domain()[1]) {
 			self.bufferSurface.beginPath();
-			self.bufferSurface.arc(self.xAxis(self.clicked.x)+.5, self.yAxis(self.clicked.y)+.5, 3, 0, 2 * Math.PI, false);
+			self.bufferSurface.arc(self.xAxis(self.clicked.x)+.5, self.yAxis(self.clicked.y)+.5, 5, 0, 2 * Math.PI, false);
 			self.bufferSurface.fill();
 			self.bufferSurface.closePath();
 		}
