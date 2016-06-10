@@ -293,11 +293,9 @@ CanvasScatterPlot = function(parent_id, dataset, options) {
 			if(hover_distance < 9) {
 				self.hovered = closest_point.inverted
 				self.render()
-				self.publish()
 			} else if(self.hovered.x > 0) {
 				self.hovered = {x:0, y:0}
 				self.render()
-				self.publish()
 			}
 		}
 	})
