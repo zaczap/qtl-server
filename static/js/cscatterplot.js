@@ -191,8 +191,8 @@ CanvasScatterPlot = function(parent_id, dataset, options) {
 	/** Publish function **/
 	this.publish = function() {
 		self.listeners.forEach(function(target, index, array) {
-			target.clicked = self.clicked
-			target.hovered = self.hovered
+			//target.clicked = self.clicked
+			//target.hovered = self.hovered
 			target.xAxis.domain([self.xAxis.domain()[0], self.xAxis.domain()[1]])
 			target.render()
 		})
