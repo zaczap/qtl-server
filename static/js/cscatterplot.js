@@ -201,6 +201,7 @@ CanvasScatterPlot = function(parent_id, dataset, options) {
 
 	/** Define zoom interaction **/
 	this.canvas.on("mousewheel", function (event) {
+		event.preventDefault(); // prevent scrolling on page
 	    var mousex = d3.mouse(this)[0]//d3.event.x;
 	    var mousey = d3.mouse(this)[1]//d3.event.y;
 	    var wheel = -d3.event.wheelDelta/1200;
