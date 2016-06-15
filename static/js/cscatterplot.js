@@ -85,7 +85,7 @@ CanvasScatterPlot = function(parent_id, dataset, options) {
 		self.bufferSurface.fillText(self.xlabel, self.width/2, self.height-self.hpadding/2)
 		self.bufferSurface.font = 'bold 14px Arial'
 
-		self.bufferSurface.fillText(self.title, self.width/2, self.hpadding/2)
+		self.bufferSurface.fillText(self.title, self.width/2+.5, self.hpadding/2+.5)
 
 
 		/** Render Y-axis **/
