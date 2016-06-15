@@ -13,6 +13,7 @@
     font-family: sans-serif;
     font-size: 11px;
 }
+
 text {
 	font-family: sans-serif;
 }
@@ -27,4 +28,9 @@ body {
 
 #example_panel {
     width: 30%;
+}
+
+.navbar-brand {
+    color: black;
+    font-weight: bold;
 }
