@@ -120,6 +120,8 @@ fetch_genotypes = function(site) {
 
 		ase_plot = new QTLPlot("#ase_plot_container", pdata, {title: "ASE @ " + site, width: 300, height:280, yLabel:'Allelic Imbalance', xLabel:'Genotype @ ' + site, extractX:mapX, extractY:mapY, forceRange:[0,.5]})
 
+		console.log("pdata:");
+		console.log(pdata);
 
 	});
 }
