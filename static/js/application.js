@@ -118,11 +118,11 @@ fetch_genotypes = function(site) {
 		mapX = function(d) { return d.genotype }
 		mapY = function(d) { return d.ase }
 
-		console.log("pdata:");
-		console.log(pdata);
-
-		ase_plot = new QTLPlot("#ase_plot_container", pdata, {title: "ASE @ " + site, width: 300, height:280, yLabel:'Allelic Imbalance', xLabel:'Genotype @ ' + site, extractX:mapX, extractY:mapY, forceRange:[0,.5]})
-
+		if(pdata.length > 0) {
+			ase_plot = new QTLPlot("#ase_plot_container", pdata, {title: "ASE @ " + site, width: 300, height:280, yLabel:'Allelic Imbalance', xLabel:'Genotype @ ' + site, extractX:mapX, extractY:mapY, forceRange:[0,.5]})
+		} else {
+			$("#ase_plot_container").html("<div class='panel panel-info'>No ASE data for site" + site + "</div>");
+		}
 	});
 }
 
