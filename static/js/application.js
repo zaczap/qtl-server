@@ -121,7 +121,7 @@ fetch_genotypes = function(site) {
 		if(pdata.length > 0) {
 			ase_plot = new QTLPlot("#ase_plot_container", pdata, {title: "ASE @ " + site, width: 300, height:280, yLabel:'Allelic Imbalance', xLabel:'Genotype @ ' + site, extractX:mapX, extractY:mapY, forceRange:[0,.5]})
 		} else {
-			$("#ase_plot_container").html("<div class='panel panel-info'>No ASE data for site" + site + "</div>");
+			$("#ase_plot_container").html("<div class='panel panel-info'><div class='panel-body' style='text-align:center'>No ASE data for site" + site + ".</div></div>");
 		}
 	});
 }
